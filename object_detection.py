@@ -6,7 +6,7 @@ from ultralytics import YOLO
 from config import KNOWN_WIDTH, FOCAL_LENGTH
 
 class ObjectDetection:
-    def __init__(self, model_path='yolov8x.pt'):
+    def __init__(self, model_path='yolov10n.pt'):
         self.model = YOLO(model_path)
         self.cap = cv2.VideoCapture(0)
         if not self.cap.isOpened():
@@ -16,7 +16,7 @@ class ObjectDetection:
         self.cap.set(cv2.CAP_PROP_FRAME_HEIGHT, 720)
 
     def calculate_distance(self, width):
-        return KNOWN_WIDTH * FOCAL_LENGTH / width
+         return KNOWN_WIDTH * FOCAL_LENGTH / width
 
     def detect_color(self, frame):
         hsv_frame = cv2.cvtColor(frame, cv2.COLOR_BGR2HSV)
