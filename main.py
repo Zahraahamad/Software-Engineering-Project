@@ -69,8 +69,7 @@ main_frame.place(relx=0.5, rely=0.5, width=2000, height=2000, anchor=tk.CENTER)
 title_label = tk.Label(root, text="YOLOv5 Object Detection", font=('Rockwell', 20), bg="black", fg="white")
 title_label.pack(side=tk.TOP, fill=tk.X)
 
-exit_label = tk.Label(root, text="Press 'Q' to Quit", font=('Rockwell', 20), bg="black", fg="white")
-exit_label.pack(side=tk.BOTTOM, fill=tk.X)
+
 
 # Buttons
 start_button = tk.Button(main_frame, text="Start Detection", command=start_detection, bg="gray", fg="black",
@@ -79,6 +78,7 @@ start_button.place(relx=0.5, rely=0.5, anchor=tk.CENTER)
 
 # Introductory message
 tts.speak("Welcome to your eyes")
+tts.speak("press on the button to start the object detection or press Q to quit")
 
 # Start the GUI main loop
 root.mainloop()
