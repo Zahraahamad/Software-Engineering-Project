@@ -1,14 +1,15 @@
-import tkinter as tk
+import tkinter as tk #building gui
 from tkinter import Tk
 from text_to_speech import TextToSpeech
 from object_detection import ObjectDetection
-import cv2
+import cv2 #video processing
+import time
 
 # Main GUI setup
 root = Tk()
-root.bind("<Escape>", lambda e: root.quit())
+root.bind("<Escape>", lambda e: root.quit()) #binding the escape key to exit
 root.attributes('-fullscreen', True)
-root.title("YOLOv5 Object Detection")
+root.title("YOLOv8 Object Detection")
 
 # Initialize Object Detection and Text-to-Speech
 tts = TextToSpeech()
@@ -78,7 +79,11 @@ start_button.place(relx=0.5, rely=0.5, anchor=tk.CENTER)
 
 # Introductory message
 tts.speak("Welcome to your eyes")
-tts.speak("press on the button to start the object detection or press Q to quit")
+# do it with the time function
+time.sleep(0.1)
+tts.speak("press on the button to start the object detection")
+time.sleep(0.1)
+tts.speak("press Q to quit")
 
 # Start the GUI main loop
 root.mainloop()
